@@ -3,13 +3,13 @@ name: VITE MPA Publicar a Github Pages
 on:
   push:
     branches:
-      -main
+      - main
 permissions:
   contents: read
   pages: write
   id-token: write
-env: 
-  DEPLOY_BASE_URL: ${{vars.DEPLOY_BASE_URL}}
+env:
+  DEPLOY_BASE_URL: ${{ vars.DEPLOY_BASE_URL}}
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -18,24 +18,24 @@ jobs:
   build:
     environment:
       name: github-pages
-      url: ${{ steps.github-pages.outputs.url }}
+      url: ${{ steps.github-pages.output.url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Clonar el repositorio
+      - name: Clonar el Repositorio
         uses: actions/checkout@v4
-      - name: Instalar Node.js
+      - name: Instalar Nodejs
         uses: actions/setup-node@v6
         with:
           node-version: '24'
-      - name: Instalar dependencias
+      - name: Instalar Dependencias del Proyecto
         run: npm install
-      - name: Compilar el proyecto en dist
+      - name: Compilar el Proyecto en Dist
         run: npm run build
-      - name: Configurar GitHub Pages para Publicar
+      - name: Configurar Github Pages para Publicar
         uses: actions/configure-pages@v5
       - name: Subir los compilados (DIST)
         uses: actions/upload-pages-artifact@v4
         with:
           path: './dist'
-      - name: Publicar en GitHub Pages
+      - name: Publicar Artefactos
         uses: actions/deploy-pages@v4
