@@ -1,0 +1,26 @@
+.tabla-productos {
+    border-collapse: collapse;
+    width: 100%;
+
+    th, td {
+        border: 1px solid #000;
+        padding: 6px 10px;
+    }
+
+    th {
+        background-color: @secondary-background-color;
+        color: @secondary-text-color;
+    }
+
+    td {
+        text-align: left;
+
+        &.text-right {
+            text-align: right;
+        }
+
+        &.text-center {
+            text-align: center;
+        }
+    }
+}

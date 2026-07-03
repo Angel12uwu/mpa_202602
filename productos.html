@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/less/style.less" />
+    <title>Productos</title>
+  </head>
+  <body>
+    {{>header}}
+    <main>
+      
+      <section class="grid">
+          <div class="row">
+            <div class="col-12">
+                <h1 style="margin-top: 2rem;">Catálogo de Productos</h1>
+                {{> tablaProductos}}
+            </div>
+          </div>
+      </section>
+    </main>
+    <footer>
+       <section>
+        &copy; Todos los derechos Reservados 2026 ICC UNICAH
+       </section>
+    </footer>
+  </body>
+</html>

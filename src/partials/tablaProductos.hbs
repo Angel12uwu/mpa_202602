@@ -1,0 +1,24 @@
+<div class="tabla-container">
+  <table class="tabla-productos">
+    <thead>
+      <tr>
+        <th>SKU</th>
+        <th>Nombre del producto</th>
+        <th>Precio unitario del producto</th>
+        <th>Cantidad en stock</th>
+        <th>Categoría</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each productos}}
+      <tr>
+        <td>{{sku}}</td>
+        <td>{{nombre}}</td>
+        <td class="text-right">HND {{precioUnitario}}</td>
+        <td class="text-center">{{stock}}</td>
+        <td>{{categoria}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
